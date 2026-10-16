@@ -6,7 +6,9 @@ object Constants {
     const val APK_EXTENSION = ".apk"
     const val SUPPORTED_PACKAGE_VERSION = 173
 
-    const val URL_MAX_LENGTH = 40
+    // Kept at 60: the reliable-token slot in libil2cpp.so only has 64 bytes
+    // before the CDN url slot, so anything above this would corrupt the metadata.
+    const val URL_MAX_LENGTH = 60
 
     const val CDN_URL_MAX_LENGTH = 35
     const val CDN_URL_1_MAX_LENGTH = CDN_URL_MAX_LENGTH + 25 // + dl/assetbundles/Android//, 2 removes the second slash

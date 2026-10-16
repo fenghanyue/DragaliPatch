@@ -153,7 +153,7 @@ class StepPatch(private val manager: StepManager, private val storage: StorageUt
             it.writeByte(apiValues.apiUrl.length.toByte().inv().toInt())
 
             it.seek(tokenOffset)
-            it.write(Utils.obfuscateUrl(apiValues.apiUrl, 40))
+            it.write(Utils.obfuscateUrl(apiValues.apiUrl, Constants.URL_MAX_LENGTH))
 
             if (cdnUrl != Constants.DEFAULT_CDN_URL) {
                 val cdnUrl1 = cdnUrl.plus("dl/assetbundles/Android//")
